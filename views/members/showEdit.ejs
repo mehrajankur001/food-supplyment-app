@@ -1,0 +1,43 @@
+
+<style>
+    .memberShowPage{
+        text-align: center;
+    }
+    .image{
+        margin-bottom: 60px;
+        
+    }
+    .d-flex{
+        align-items: center;
+    }
+    .input-group{
+        height: 38px;
+    }
+
+    .title{
+        margin: 20px 20px 5px;
+    }
+    .container-fluid{
+        width: 90%;
+        margin: auto;
+    }
+    .text-center{
+        text-align: center;
+    }
+    .card-div{
+        margin: 0;
+    }
+</style>
+
+<div class="container-fluid container-md overflow-hidden">
+    <h2><%= member.name %> </h2>
+    <div class="image">
+        <img src=<%= member.memberImagePath %> alt="">
+    </div>
+    <div class="btn-group btn-group-lg" role="group" >
+        <a href="/members/<%= member.id %>/edit">
+            <button type="button" class="btn btn-lg btn-outline-success w-100">Edit</button>
+        </a>
+        <%- include('../partials/delete', {url: `/members/${member.id}`}) %>
+    </div>
+</div>

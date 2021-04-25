@@ -1,0 +1,152 @@
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/owl.carousel.min.css">
+<link rel="stylesheet" href="/css/owl.theme.default.min.css">
+<link rel="stylesheet" href="/css/carousel.css">
+<link rel="stylesheet" href="/css/nav.css">
+
+
+
+<div class="container mt-5 mb-5">
+    <h1>Packages</h1>
+    <div class="owl-carousel owl-theme">
+        <% packages.forEach(package =>{ %> 
+            <div class="ms-2 me-2 ">
+                <div class="card h-100">
+                    <img src=<%= package.coverImagePath %>  alt="" class="card-img-top">
+                    <div class="card-body">
+                    <h5 class="card-title">
+                        <%= package.title %>
+                    </h5>
+                    <p>Price <%= package.price.toLocaleString('bn-BD') %> </p>
+                    </div>
+                    <a href="/packages/<%= package.id %> ">
+                        <button type="button" class="btn btn-lg btn-primary w-100">viwe details</button>
+                    </a>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<div class="container mt-5 mb-5">
+    <h1>Brands</h1>
+    <div class="owl-carousel owl-theme">
+        <% brands.forEach(brand =>{ %> 
+            <div class="ms-2 me-2 ">
+                <div class="card h-100">
+                    <img src=<%= brand.brandImagePath %>  alt="" class="card-img-top">
+                    <div class="card-body">
+                    <h5 class="card-title">
+                        <%= brand.name %>
+                    </h5>
+                    </div>
+                    <a href="/brands/<%= brand.id %>">
+                        <button class="btn w-100 btn-primary">view details</button>
+                    </a>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<div class="container mt-5 mb-5">
+    <h3 class="title">New Products</h3>
+    <div class="owl-carousel owl-theme">
+        <% recentProducts.forEach(product =>{ %>
+            <div class="ms-2 me-2">
+                <div class="card">
+                    <img src=<%= product.coverImagePath %>  alt="" class="card-img-top">
+                    <div class="card-body">
+                    <h6 class="card-title">
+                        <% brands.forEach(brand => { %>
+                            <% if(product.brand == brand.id) { %>
+                                <%= brand.name %>
+                            <% } %>
+                        <% }) %>
+                    </h6>
+                    </div>
+                    <a href="/products/<%= product.id %> ">
+                        <button class="btn w-100 btn-primary">viwe details</button>
+                    </a>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<div class="container mt-5 mb-5">
+    <h3 class="title">Old Products</h3>
+    <div class="owl-carousel owl-theme">
+        <% oldProducts.forEach(product =>{ %>
+            <div class="ms-2 me-2">
+                <div class="card h-100">
+                    <img src=<%= product.coverImagePath %>  alt="" class="card-img-top">
+                    <div class="card-body">
+                    <h7 class="card-title">
+                        <% brands.forEach(brand => { %>
+                            <% if(product.brand == brand.id) { %>
+                                <%= brand.name %>
+                            <% } %>
+                        <% }) %>
+                    </h7>
+                    </div>
+                    <a href="/products/<%= product.id %> ">
+                        <button class="btn w-100 btn-primary">viwe details</button>
+                    </a>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<div class="container mt-5 mb-5">
+    <h3 class="title">New supplements</h3>
+    <div class="owl-carousel owl-theme">
+        <% recentSupplement.forEach(supplement =>{ %>
+            <div class="ms-2 me-2">
+                <div class="card">
+                    <img src=<%= supplement.coverImagePath %>  alt="" class="card-img-top">
+                    <div class="card-body">
+                    <h6 class="card-title">
+                        <% brands.forEach(brand => { %>
+                            <% if(supplement.brand == brand.id) { %>
+                                <%= brand.name %>
+                            <% } %>
+                        <% }) %>
+                    </h6>
+                    </div>
+                    <a href="/supplements/<%= supplement.id %> ">
+                        <button class="btn w-100 btn-primary">viwe details</button>
+                    </a>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<div class="container mt-5 mb-5">
+    <h3 class="title">Old supplements</h3>
+    <div class="owl-carousel owl-theme">
+        <% oldSupplement.forEach(supplement =>{ %>
+            <div class="ms-2 me-2">
+                <div class="card h-100">
+                    <img src=<%= supplement.coverImagePath %>  alt="" class="card-img-top">
+                    <div class="card-body">
+                    <h7 class="card-title">
+                        <% brands.forEach(brand => { %>
+                            <% if(supplement.brand == brand.id) { %>
+                                <%= brand.name %>
+                            <% } %>
+                        <% }) %>
+                    </h7>
+                    </div>
+                    <a href="/supplements/<%= supplement.id %> ">
+                        <button class="btn w-100 btn-primary">viwe details</button>
+                    </a>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+    

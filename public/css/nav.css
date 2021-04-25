@@ -1,0 +1,230 @@
+/* custom scroll bar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+::selection {
+  background: rgb(0, 123, 255, 0.3);
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 70px;
+  padding: 0 1.5em;
+  background-color: #2f3542;
+  font-family: "Montserrat", sans-serif;
+}
+
+nav.sticky {
+  background-color: #2f3542;
+  padding: 0 1.5em;
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+nav .logo {
+  font-size: 1.25em;
+  line-height: 70px;
+  color: #fff;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+nav .nav-menu {
+  position: absolute;
+  right: 1.5em;
+  top: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+nav .nav-item {
+  display: inline-block;
+}
+nav .nav-item > a {
+  display: inline-block;
+  padding: 0 1.5em;
+  line-height: 70px;
+  color: #fff;
+  text-decoration: none;
+}
+nav .dropdown {
+  position: relative;
+}
+nav .dropdown a::after {
+  content: "";
+  display: inline-block;
+  margin-left: 0.5em;
+  vertical-align: middle;
+  border-top: 0.3em solid #fff;
+  border-right: 0.3em solid transparent;
+  border-left: 0.3em solid transparent;
+}
+nav .dropdown.show a::after {
+  transform: rotate(180deg);
+}
+nav .dropdown-menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  padding: 0.5em 0;
+  margin-top: -0.5em;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 0.5em;
+  background-color: #fff;
+}
+nav .dropdown.show .dropdown-menu {
+  display: block;
+}
+nav .dropdown-item {
+  display: block;
+  padding: 0 1.5em;
+  font-size: 0.875em;
+  color: #000;
+  line-height: 3;
+  text-decoration: none;
+}
+
+/* drop down 2 */
+
+nav .dropdown2 {
+  position: relative;
+}
+nav .dropdown2 a::after {
+  content: "";
+  display: inline-block;
+  margin-left: 0.5em;
+  vertical-align: middle;
+  border-top: 0.3em solid #fff;
+  border-right: 0.3em solid transparent;
+  border-left: 0.3em solid transparent;
+}
+nav .dropdown2.show a::after {
+  transform: rotate(180deg);
+}
+nav .dropdown-menu2 {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  padding: 0.5em 0;
+  margin-top: -0.5em;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 0.5em;
+  background-color: #fff;
+}
+nav .dropdown2.show .dropdown-menu2 {
+  display: block;
+}
+nav .dropdown-item2 {
+  display: block;
+  padding: 0 1.5em;
+  font-size: 0.875em;
+  color: #000;
+  line-height: 3;
+  text-decoration: none;
+}
+
+nav .btn-hamburger {
+  display: none;
+  position: absolute;
+  right: 1.5em;
+  top: 50%;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+  transform: translateY(-50%);
+}
+nav .btn-hamburger span {
+  display: block;
+  width: 30px;
+  height: 4px;
+  background-color: #fff;
+  margin: 6px;
+  border-radius: 2px;
+  transition: 0.3s ease-in-out;
+}
+nav .btn-hamburger span:nth-child(4),
+nav .btn-hamburger span:nth-child(5) {
+  position: absolute;
+  top: 10px;
+  opacity: 0.5;
+}
+nav .btn-hamburger span:nth-child(4) {
+  transform: rotate(45deg) scale(0);
+}
+nav .btn-hamburger span:nth-child(5) {
+  transform: rotate(-45deg) scale(0);
+}
+nav.opened .btn-hamburger span:nth-child(4) {
+  opacity: 1;
+  transform: rotate(45deg) scale(1);
+}
+nav.opened .btn-hamburger span:nth-child(5) {
+  opacity: 1;
+  transform: rotate(-45deg) scale(1);
+}
+nav.opened .btn-hamburger span:nth-child(1),
+nav.opened .btn-hamburger span:nth-child(2),
+nav.opened .btn-hamburger span:nth-child(3) {
+  opacity: 0;
+}
+@media screen and (max-width: 832px) {
+  nav {
+    width: 100vw;
+  }
+  nav .nav-menu {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 70px;
+    bottom: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    background-color: #363d4e;
+    transition: bottom 0.5s ease-in-out;
+    overflow: hidden;
+  }
+  nav.opened .nav-menu {
+    bottom: 0;
+  }
+  nav .nav-item > a {
+    display: block;
+  }
+  nav .dropdown-menu {
+    position: relative;
+    top: 0;
+    margin: 0 1.5em;
+  }
+  nav .btn-hamburger {
+    display: block;
+  }
+}
+
+.youtube-link {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  color: #000;
+  text-decoration: none;
+  font-size: 12px;
+}

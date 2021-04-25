@@ -1,0 +1,49 @@
+
+<style>
+    .userShowPage{
+        text-align: center;
+    }
+    .d-flex{
+        align-items: center;
+    }
+    .input-group{
+        height: 38px;
+    }
+
+    .title{
+        margin: 20px 20px 5px;
+    }
+    .container-fluid{
+        width: 90%;
+        margin: auto;
+    }
+    .text-center{
+        text-align: center;
+    }
+    .card-div{
+        margin: 0;
+    }
+</style>
+
+
+    <div class="row g-2">
+        <div class="col-lg-3 col-md-6 text-center card-div mt-3 mb-3">
+        <div class="card h-100 text-center ">
+                <h4 class="title"><%= package.title %></h4>
+            <div class="card-body">
+                <img src=<%= package.coverImagePath %>  alt="" class="card-img-top">
+                <p> Price: <%= package.price.toLocaleString('bn-BD') %> Taka </p>
+            </div>
+            <div class="card-footer">
+            </div>
+        </div>
+    </div>
+    </div>
+    <p><%= package.description %> </p>
+    <div class="btn-group btn-group-lg" role="group" >
+        <a href="/packages/<%= package.id %>/edit">
+            <button type="button" class="btn btn-md btn-outline-success w-100">Edit package</button>
+        </a>
+        <%- include('../partials/delete', {url: `/packages/${package.id}`}) %>
+    </div>
+

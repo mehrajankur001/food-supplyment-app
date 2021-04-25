@@ -1,0 +1,54 @@
+
+<style>
+    .brandShowPage{
+        text-align: center;
+    }
+    .d-flex{
+        align-items: center;
+    }
+    .input-group{
+        height: 38px;
+    }
+
+    .title{
+        margin: 20px 20px 5px;
+    }
+    .container-fluid{
+        width: 90%;
+        margin: auto;
+    }
+    .text-center{
+        text-align: center;
+    }
+    .card-div{
+        margin: 0;
+    }
+</style>
+
+
+    <div class="row g-2">
+        <div class="col-lg-3 col-md-6 text-center card-div mt-3 mb-3">
+        <div class="card h-100 text-center ">
+                <h7 class="title"><%= supplement.title %></h7>
+            <div class="card-body">
+                <img src=<%= supplement.coverImagePath %>  alt="" class="card-img-top">
+                <h7><%= supplement.brand.name %> </h7>
+                <p> Price: <%= supplement.price %> </p>
+            </div>
+            <div class="card-footer">
+            <a href="/brands/<%= supplement.brand.id %> ">
+                <button type="button" class="btn btn-lg btn-primary w-100">viwe Brand</button>
+            </a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <p><%= supplement.description %> </p>
+    <div class="btn-group btn-group-lg" role="group" >
+        <a href="/supplements/<%= supplement.id %>/edit">
+            <button type="button" class="btn btn-lg btn-outline-success w-100">Edit supplement</button>
+        </a>
+        <%- include('../partials/delete', {url: `/supplements/${supplement.id}`}) %>
+    </div>
+    
+

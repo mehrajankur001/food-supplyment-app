@@ -1,0 +1,39 @@
+<style>
+    .container-fluid{
+        width: 90%;
+        margin: auto;
+    }
+
+    .d-flex{
+        align-items: center;
+    }
+    .input-group{
+        height: 38px;
+    }
+    
+
+</style>
+
+
+
+    <form class="d-flex" action="/brands" method="get">
+        <input type="search" class="input-group input-group-lg flex-nowrap" name="name" autofocus placeholder="  Write Brand Name" value=<%= searchOptions.name %> >
+        <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
+    </form>
+<div class="row g-2">
+    <% brands.forEach(brand =>{ %> 
+    <div class="col-lg-3 col-md-6 text-center card-div mt-3 mb-3">
+      <div class="card h-100 text-center ">
+            <h4 class="title"> <%= brand.name %></h4>
+            <img class="" src=<%= brand.brandImagePath %>  alt="" class="card-img-top">
+        <div class="card-footer">
+            <a href="/brands/<%= brand.id %> ">
+                <button type="button" class="btn btn-lg btn-primary w-100">viwe details</button>
+            </a>
+        </div>
+      </div>
+   </div>
+   <% }); %>
+</div>
+
+      

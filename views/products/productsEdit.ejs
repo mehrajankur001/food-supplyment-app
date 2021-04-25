@@ -1,0 +1,52 @@
+<style>
+    .productPage{
+        text-align: center;
+    }
+    .d-flex{
+        align-items: center;
+    }
+    .input-group{
+        height: 38px;
+    }
+
+    .title{
+        margin: 20px 20px 5px;
+    }
+    .container-fluid{
+        width: 90%;
+        margin: auto;
+    }
+    .text-center{
+        text-align: center;
+    }
+    .card-div{
+        margin: 0;
+    }
+</style>
+
+    
+        <form class="d" action="/products" method="get">
+            <input type="search"class="input-group input-group-lg flex-nowrap" name="title" autofocus placeholder="  Write Product name"  value=<%= searchOptions.title %> >
+            <button class="btn w-100 btn-outline-success" type="submit">Search</button>
+        </form>
+        <div class="row g-2">
+            <% products.forEach(product =>{ %>
+            <div class="col-lg-3 col-md-6 text-center card-div mt-3 mb-3">
+              <div class="card h-100 text-center ">
+                    <h4 class="title"><%= product.title %></h4>
+                    <img src=<%= product.coverImagePath %>  alt="" class="card-img-top">
+                <div class="card-body">
+                  <h4><%= product.brand.name %> </h4>
+                  <p>Price <%= product.price.toLocaleString('bn-BD') %> </p>
+                  <p><%= product.publishDate.toISOString().split('T')[0] %></p>
+                </div>
+                <div class="card-footer">
+                    <a href="/products/<%= product.id %>/showEdit">
+                        <button class="btn w-100 btn-primary">viwe Edit Page</button>
+                    </a>
+                </div>
+              </div>
+           </div>
+           <% }); %>
+        </div>
+  

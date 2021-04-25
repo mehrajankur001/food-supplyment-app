@@ -1,0 +1,48 @@
+<style>
+    .d-flex{
+        align-items: center;
+    }
+    .input-group{
+        height: 38px;
+    }
+
+    .title{
+        margin: 20px 20px 5px;
+    }
+    .container-fluid{
+        width: 90%;
+        margin: auto;
+    }
+    .text-center{
+        text-align: center;
+    }
+    .card-div{
+        margin: 0;
+    }
+</style>
+
+        <form class="d" action="/packages" method="get">
+            <input type="search"class="input-group input-group-lg flex-nowrap" name="title" autofocus placeholder="  Write package name"  value=<%= searchOptions.title %> >
+            <button class="btn w-100 btn-outline-success" type="submit">Search</button>
+            <br>
+        </form>
+
+        <div class="row g-2">
+            <% packages.forEach(package =>{ %>
+            <div class="col-lg-3 col-md-6 text-center card-div mt-3 mb-3">
+              <div class="card h-100 text-center ">
+                    <h4 class="title"><%= package.title %></h4>
+                    <img src=<%= package.coverImagePath %>  alt="" class="card-img-top">
+                <div class="card-body">
+                  <p>Price <%= package.price %> </p>
+                </div>
+                <div class="card-footer">
+                    <a href="/packages/<%= package.id %> ">
+                        <button type="button" class="btn btn-lg btn-primary w-100">viwe details</button>
+                    </a>
+                </div>
+              </div>
+           </div>
+           <% }); %>
+        </div>
+

@@ -1,0 +1,8 @@
+<h1>EDIT</h1>
+<form action="/packages/<%= package.id %>?_method=PUT" method="post" enctype="multipart/form-data">
+    <%- include('_form_fields') %>
+    <div class="btn-group btn-group-lg" role="group" >
+        <button class="btn bnt-lg btn-outline-dark"><a href="/packages">Cancel</a></button>
+        <button class="btn bnt-lg btn-outline-dark" type="submit">Update</button>
+    </div>
+</form>

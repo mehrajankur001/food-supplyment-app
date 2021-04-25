@@ -1,0 +1,8 @@
+<h1>EDIT</h1>
+<form action="/products/<%= product.id %>?_method=PUT" method="post" enctype="multipart/form-data">
+    <%- include('_form_fields') %>
+    <div class="btn-group btn-group-lg" role="group" >
+        <button class="btn btn-lg btn-outline-dark"><a href="/products">Cancel</a></button>
+        <button type="submit" class="btn btn-lg btn-outline-dark">Update</button>
+    </div>
+</form>

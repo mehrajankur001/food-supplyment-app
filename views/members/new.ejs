@@ -1,0 +1,8 @@
+<h1>Add New member</h1>
+<form action="/members" method="post" enctype="multipart/form-data">
+    <%- include('_form_fields') %>
+    <div class="btn-group btn-group-lg" role="group" >
+        <button class="btn bnt-lg btn-outline-dark"><a href="/members">Cancel</a></button>
+        <button class="btn bnt-lg btn-outline-dark" type="submit">Add</button>
+    </div>
+</form>

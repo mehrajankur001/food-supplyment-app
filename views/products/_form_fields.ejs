@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-sm-8">
+        <div class="input-group mb-3">
+            <label class="form-control">Name:</label>
+            <input class="form-control" type="text" name="title" value="<%= product.title %>" >
+        </div>
+        <div class="input-group mb-3">
+            <label class="form-control">Brand:</label>
+            <select class="form-select" name="brand" id="">
+                <% brands.forEach(brand=> { %>
+                    <% if(brand.id == product.brand) {%>
+                        <option selected label="<%= brand.name %>"  value="<%= brand.id %>" ></option>
+                    <% } else { %>
+                        <option label="<%= brand.name %>"  value="<%= brand.id %>" ></option>
+                    <% } %>
+                <% }); %>
+            </select>
+        </div class="input-group mb-3">
+        <div>
+            <label class="form-control">Publish Date:</label>
+            <input  class="form-control"type="date" name="publishDate"
+            value="<%= product.publishDate != null ? product.publishDate.toISOString().split('T')[0] : '' %>" >
+        </div>
+        <div class="input-group mb-3">
+            <label class="form-control">Price:</label>
+            <input class="form-control" type="number" min="1" name="price" value="<%= product.price %>" >
+        </div>
+        <div class="input-group mb-3">
+            <label class="form-control">Description:</label>
+            <input class="form-control" type="text" name="description" value="<%= product.description %>" >
+        </div>
+        <div class="input-group mb-3">
+            <label class="form-control">Image:</label>
+            <input class="form-control" type="file" name="coverImage">
+        </div>
+    </div>
+</div>
+

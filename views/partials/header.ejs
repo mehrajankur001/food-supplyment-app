@@ -1,0 +1,85 @@
+<link rel="stylesheet" href="/css/nav.css">
+
+<!-- <h1><a href="/">অংকুর বই বাজার</a></h1>
+<ul>
+    <li><a href="/brands">লেখক</a></li>
+    <li><a href="/brands/new">নতুন লেখক যোগ করুন</a></li>
+    <li><a href="/products">বই সমূহ</a></li>
+    <li><a href="/products/new">নতুন বই যোগ করুন</a></li>
+</ul> -->
+
+<nav>
+    <div class="logo">
+        <a class="logo" href="/">ViKings <strong>Gym</strong></a>
+    </div>
+    <button type="button" class="btn-hamburger" data-action="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <ul class="nav-menu">
+
+        <li class="nav-item"><a href="/members">Members</a></li>
+        <li class="nav-item"><a href="/packages">Packages</a></li>
+        <li class="nav-item"><a href="/brands">Brands</a></li>
+        <li class="nav-item"><a href="/products">Products</a></li>
+        <li class="nav-item"><a href="/supplements">Supplement</a></li>
+
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Edit Options
+            </a>
+            <ul class="dropdown-menu" >
+                <li><a class="dropdown-item" href="/brands/edit">Edit Brand</a></li>
+                <li><a class="dropdown-item" href="/products/edit">Edit Product</a></li>
+                <li><a class="dropdown-item" href="/members/edit">Edit Member</a></li>
+                <li><a class="dropdown-item" href="/packages/edit">Edit Package</a></li>
+                <li><a class="dropdown-item" href="/supplements/edit">Edit Supplements</a></li>
+            </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-action="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Add Option
+            </a>
+            <ul class="dropdown-menu" >
+                <li><a class="dropdown-item" href="/brands/new">Add New Brand</a></li>
+                <li><a class="dropdown-item" href="/products/new">Add New Product</a></li>
+                <li><a class="dropdown-item" href="/members/new">Add New Member</a></li>
+                <li><a class="dropdown-item" href="/packages/new">Add New Package</a></li>
+                <li><a class="dropdown-item" href="/supplements/new">Add New Supplements</a></li>
+            </ul>
+        </li>
+
+        <!-- <li class="nav-item dropdown">
+            <a href="#" data-action="dropdown-toggle">Add New</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="/brands/new">Add New Brand</a>
+                <a class="dropdown-item" href="/products/new">Add New Product</a>
+            </div>
+        </li> -->
+
+
+        <li class="nav-item"><a href="#">About Us</a></li>
+    </ul>
+</nav>
+<script>
+    window.onscroll = () => {
+    this.scrollY > 20 ? nav.classList.add("sticky") : nav.classList.remove('sticky');
+    if (this.scrollY > 20) {
+        console.log("sad");
+    }
+
+    window.screen = () => {
+    if (this.screen < 600) {
+        console.log(this.screen)
+    }
+}
+
+}
+</script>
+
+<script src="/js/nav.js"></script>

@@ -1,0 +1,42 @@
+<style>
+    .container-fluid{
+        width: 90%;
+        margin: auto;
+    }
+
+    .d-flex{
+        align-items: center;
+    }
+    .input-group{
+        height: 38px;
+    }
+
+</style>
+
+
+
+    <form class="d-flex" action="/members" method="get">
+        <input type="search" class="input-group input-group-lg flex-nowrap" name="name" autofocus placeholder="  Write member Name" value=<%= searchOptions.name %> >
+        <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
+    </form>
+    <div class="row g-2">
+        <% members.forEach(member =>{ %>
+        <div class="col-lg-3 col-md-6 text-center card-div mt-3 mb-3">
+          <div class="card h-100 text-center ">
+                <img src=<%= member.memberImagePath %>  alt="" class="card-img-top">
+            <div class="card-body">
+                <h4 class="card-title">
+                    <%= member.name %>
+                </h4>
+              <h4><%= member.package.title %> </h4>
+            </div>
+            <div class="card-footer">
+                <a href="/members/<%= member.id %>/showEdit">
+                    <button class="btn w-100 btn-primary">view Edit</button>
+                </a>
+            </div>
+          </div>
+       </div>
+       <% }); %>
+    </div>
+

@@ -1,0 +1,37 @@
+    <div class="input-group mb-3">
+        <label class="form-control" >Name:</label>
+        <input class="form-control" type="text" name="name" value="<%= member.name %>" >
+    </div>
+    <div class="input-group mb-3">
+        <label class="form-control">Age:</label>
+        <input class="form-control" type="number" name="age" value="<%= member.age %>" >
+    </div>
+    <div class="input-group mb-3">
+        <label class="form-control" >Gender:</label>
+        <select class="form-select" aria-label="Default select example" name="gender" id="">
+                <option label="Male" value="Male"></option>
+                <option label="Female" value="Female">
+        </select>
+    </div class="input-group mb-3">
+    <div class="input-group mb-3">
+        <label class="form-control">Package:</label>
+        <select class="form-select" aria-label="Default select example" name="package" id="">
+            <% packages.forEach(package=> { %>
+                <% if(package.id == member.package) {%>
+                    <option selected label="<%= package.title %>"  value="<%= package.id %>" ></option>
+                <% } else { %>
+                <option label="<%= package.title %>"  value="<%= package.id %>" ></option>
+                <% } %>
+            <% }); %>
+    </select>
+    </div>
+    <div class="input-group mb-3">
+        <label class="form-control" >Email:</label>
+        <input class="form-control" type="email" name="email" value="<%= member.email %>" >
+    </div>
+    <div class="input-group mb-3">
+        <label class="form-control">Image:</label>
+        <input class="form-control" type="file" name="memberImage" >
+    </div>
+
+

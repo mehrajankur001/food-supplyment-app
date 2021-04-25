@@ -1,0 +1,77 @@
+
+<style>
+    .memberShowPage{
+        text-align: center;
+    }
+    .img-background-color{
+        background-color: grey;
+    }
+    .d-flex{
+        align-items: center;
+    }
+    .input-group{
+        height: 38px;
+    }
+    .info{
+        text-align: left;
+        color: black;
+        background-color: grey;
+    }
+    .title{
+        margin: 20px 20px 5px;
+    }
+    .container-fluid{
+        width: 90%;
+        margin: auto;
+    }
+    .text-center{
+        text-align: center;
+    }
+    .card-div{
+        margin: 0;
+    }
+</style>
+
+
+    <div class="row g-2">
+        <div class="col-lg-3 col-md-6 text-center card-div mt-3 mb-3">
+            <div class="card h-100 text-center img-background-color">
+                <div class="card-body">
+                    <img src=<%= member.memberImagePath %>  alt="" class="card-img-top">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8 col-md-6 text-center card-div mt-3 mb-3">
+            <div class="card h-100 text-center ">
+                <div class="card-body info">
+                    <h6>Name: <%= member.name %> </h6>
+                    <h6>Age: <%= member.age %> </h6>
+                    <h6>Email: <%= member.email %> </h6>
+                    <h6>Gender: <%= member.gender %> </h6>
+                    <h6>Admission Date: <%= member.createdAt %> </h6>
+                    <h6>Package: <%= member.package.title %> </h6>
+                    <h6>Id: <%= member.id %> </h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="row g-2">
+    <div class="col-lg-3 col-md-6 text-center card-div mt-3 mb-3">
+        <div class="card h-100 text-center ">
+            <div class="card-title">
+                <h3><%= member.package.title %> </h3>
+            </div>
+            <div class="card-body">
+                <img src=<%= member.package.coverImagePath %>  alt="" class="card-img-top">
+            <p>Price <%= member.package.price %> Taka </p>
+            </div>
+            <div class="card-footer">
+                <a href="/packages/<%= member.package.id %> ">
+                    <button type="button" class="btn btn-lg btn-primary w-100">viwe details</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

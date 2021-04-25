@@ -1,0 +1,8 @@
+<h1>New supplement</h1>
+<form action="/supplements" method="post" enctype="multipart/form-data">
+    <%- include('_form_fields') %>
+    <div class="btn-group btn-group-lg" role="group" >
+        <button class="btn bnt-lg btn-outline-dark"><a href="/supplements">Cancel</a></button>
+        <button class="btn bnt-lg btn-outline-dark" type="submit">Add</button>
+    </div>
+</form>

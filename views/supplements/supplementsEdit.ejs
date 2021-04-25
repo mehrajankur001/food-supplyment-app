@@ -1,0 +1,62 @@
+<style>
+    .supplementPage{
+        text-align: center;
+    }
+    .d-flex{
+        align-items: center;
+    }
+    .input-group{
+        height: 38px;
+    }
+
+    .title{
+        margin: 20px 20px 5px;
+    }
+    .container-fluid{
+        width: 90%;
+        margin: auto;
+    }
+    .text-center{
+        text-align: center;
+    }
+    .card-div{
+        margin: 0;
+    }
+</style>
+
+
+        <form class="d" action="/supplements" method="get">
+            <input type="search"class="input-group input-group-lg flex-nowrap" name="title" autofocus placeholder="  Write supplement name"  value=<%= searchOptions.title %> >
+            <button class="btn w-100 btn-outline-success" type="submit">Search</button>
+            <br>
+            <input type="search"class="input-group input-group-lg flex-nowrap" name="brand" autofocus placeholder="  Write Brand name"  value=<%= searchOptions.brand %> >
+            <button class="btn w-100 btn-outline-success" type="submit">Search</button>
+            <br>
+            <input type="date" class="input-group input-group-lg flex-nowrap" name="publishedBefore" value=<%= searchOptions.publishedBefore %> >
+            <button class="btn w-100 btn-outline-success" type="submit">Before This Date</button>
+            <br>
+            <br>
+            <input type="date" class="input-group input-group-lg flex-nowrap" name="publishedAfter" id="" value=<%= searchOptions.publishedAfter %> >
+            <button class="btn w-100 btn-outline-success" type="submit">After This Date</button>
+            <br>
+        </form>
+        <div class="row g-2">
+            <% supplements.forEach(supplement =>{ %>
+            <div class="col-lg-3 col-md-6 text-center card-div mt-3 mb-3">
+              <div class="card h-100 text-center ">
+                    <h4 class="title"><%= supplement.title %></h4>
+                    <img src=<%= supplement.coverImagePath %>  alt="" class="card-img-top">
+                <div class="card-body">
+                  <h4><%= supplement.brand.name %> </h4>
+                  <p>Price <%= supplement.price %> Taka </p>
+                </div>
+                <div class="card-footer">
+                    <a href="/supplements/<%= supplement.id %>/showEdit">
+                        <button class="btn w-100 btn-primary">viwe Edit Page</button>
+                    </a>
+                </div>
+              </div>
+           </div>
+           <% }); %>
+        </div>
+    

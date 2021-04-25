@@ -1,0 +1,63 @@
+<style>
+    .supplementPage{
+        text-align: center;
+    }
+    .d-flex{
+        align-items: center;
+    }
+    .input-group{
+        height: 38px;
+    }
+
+    .title{
+        margin: 20px 20px 5px;
+    }
+    .container-fluid{
+        width: 90%;
+        margin: auto;
+    }
+    .text-center{
+        text-align: center;
+    }
+    .card-div{
+        margin: 0;
+    }
+</style>
+
+
+        <form class="d" action="/supplements" method="get">
+            <input type="search"class="input-group input-group-lg flex-nowrap" name="title" autofocus placeholder="  Write supplement name"  value=<%= searchOptions.title %> >
+            <button class="btn w-100 btn-outline-success" type="submit">Search</button>
+            <br>
+            <br>
+            <input  type="number" class="input-group input-group-lg flex-nowrap" name="lowerThan" value=<%= searchOptions.lowerThan %> >
+            <button class="btn w-100 btn-outline-success" type="submit">or Less</button>
+            <br>
+            <br>
+            <input type="number" class="input-group input-group-lg flex-nowrap" name="greaterThan" id="" value=<%= searchOptions.greaterThan %> >
+            <button class="btn w-100 btn-outline-success" type="submit">or High</button>
+            <br>
+        </form>
+
+
+        
+        <div class="row g-2">
+            <% supplements.forEach(supplement =>{ %>
+            <div class="col-lg-3 col-md-6 text-center card-div mt-3 mb-3">
+              <div class="card h-100 text-center ">
+                    <h4 class="title"><%= supplement.title %></h4>
+                    <img src=<%= supplement.coverImagePath %>  alt="" class="card-img-top">
+                <div class="card-body">
+                  <h4><%= supplement.brand.name %> </h4>
+                  <p>Price <%= supplement.price %> Taka </p>
+                </div>
+                <div class="card-footer">
+                    <a href="/supplements/<%= supplement.id %> ">
+                        <button type="button" class="btn btn-lg btn-primary w-100">viwe details</button>
+                    </a>
+                </div>
+              </div>
+           </div>
+           <% }); %>
+        </div>
+
