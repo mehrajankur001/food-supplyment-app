@@ -1,0 +1,62 @@
+<h1 class="a">Weather</h1>
+
+<% if(Object.keys(weatherData).length === 0 && weatherData.constructor === Object) {%> 
+  <% console.log(weatherData) %> 
+   
+<% } else { %>
+  <div class="">
+    <h1>Temp: <%= weatherData.current.temp %>°</h1>
+    <img src="http://openweathermap.org/img/wn/<%= weatherData.current.weather[0].icon %>@2x.png" alt="">
+  </div>
+  <% var today = new Date(); %>
+  <% var currentHour = today.getHours(); %>
+  <% var time = today.toLocaleString('en-US', { hour: 'numeric', hour12: true }); %>
+  <% var amPm; %>
+  <% if (currentHour > 11) { %>
+      <% amPm = 'pm'; %>
+      <% if (currentHour > 12) { %>
+            <% currentHour -= 12; %>
+      <% } %>
+  <% } else amPm = 'am' %>
+  <div class="container mt-5 mb-5">
+  <h1>Hourly</h1>
+  <div class="owl-carousel owl-theme">
+    <%  weatherData.hourly.forEach((hour, i) => { %>
+        
+          <% if (currentHour > 11 && amPm === 'am') { %>
+            <% amPm = 'pm' %>
+            <% } else if (currentHour > 11 && amPm === 'pm') { %>
+                  <% amPm = 'am' %>
+            <% } %>
+                    <% if(i < 7) { %> 
+                      <div class="ms-2 me-2 ">
+                          <div class="card h-100">
+                            <img src="http://openweathermap.org/img/wn/<%= weatherData.hourly[i].weather[0].icon %>@2x.png" alt="">
+                              <div class="card-body">
+                              <h5 class="card-title">
+                                <h3>Temp: <%= weatherData.hourly[i].temp %>°C </h3>
+                                <h3><%=currentHour %> <%= amPm %></h3>
+                              </h5>
+                              </div>
+                          </div>
+                      </div>
+                    <% } %>
+            
+            <% if (currentHour === 12) { %>
+                  <% ++currentHour; %>
+                  <% currentHour -= 12; %>
+            <% } else currentHour++; %>
+        
+        <% }); %>
+      </div>
+    </div>
+<% } %>  
+  
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+<script src="/js/weather.js"></script>

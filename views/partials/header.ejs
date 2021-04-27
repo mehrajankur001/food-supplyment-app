@@ -51,6 +51,7 @@
                 <li><a class="dropdown-item" href="/members/new">Add New Member</a></li>
                 <li><a class="dropdown-item" href="/packages/new">Add New Package</a></li>
                 <li><a class="dropdown-item" href="/supplements/new">Add New Supplements</a></li>
+                <li><a class="dropdown-item" href="/weather">Weather</a></li>
             </ul>
         </li>
 
@@ -69,16 +70,6 @@
 <script>
     window.onscroll = () => {
     this.scrollY > 20 ? nav.classList.add("sticky") : nav.classList.remove('sticky');
-    if (this.scrollY > 20) {
-        console.log("sad");
-    }
-
-    window.screen = () => {
-    if (this.screen < 600) {
-        console.log(this.screen)
-    }
-}
-
 }
 </script>
 

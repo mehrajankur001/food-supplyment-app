@@ -48,7 +48,9 @@ app.use('/products', productsRoute);
 const supplementsRoute = require('./route/supplements');
 app.use('/supplements', supplementsRoute);
 
-
+//weather route
+const weatherRoute = require('./route/weather');
+app.use('/weather', weatherRoute);
 
 
 
